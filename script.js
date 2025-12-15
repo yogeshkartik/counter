@@ -16,6 +16,9 @@ resetCount.addEventListener("click", resetCounter);
 lapCount.addEventListener("click", lapCounter);
 
 function startCounter() {
+  if (intervalId !== null) return; // This is important to prevent to create a new interval
+  // else if we click on start button twice or more it will increase counter
+
   intervalId= setInterval(() => {
     
     counterElement.innerText = x;
@@ -35,6 +38,7 @@ function pauseCount() {
 
 function resetCounter() {
   clearInterval(intervalId);
+  intervalId = null;
   x = 0;
   counterElement.innerText = x;
 }
