@@ -19,22 +19,17 @@ function startCounter() {
   if (intervalId !== null) return; // This is important to prevent to create a new interval
   // else if we click on start button twice or more it will increase counter
 
-  intervalId= setInterval(() => {
-    if(!pause){
-    counterElement.innerText = x;
-    x++;}
+  intervalId = setInterval(() => {
+    if (!pause) {
+      counterElement.innerText = x;
+      x++;
+    }
   }, 1000);
 }
 
 function pauseResumer() {
-    pause = !pause;
-    if (pause) {
-      
-      pauseResume.innerText = "Resume";
-    } else{
-      pauseResume.innerText = "Pause";
-      
-    }
+  pause = !pause;
+  pauseResume.innerText = pause ? "Resume" : "Pause";
 }
 
 function resetCounter() {
