@@ -28,11 +28,22 @@ function startCounter() {
 
 function pauseResumer() {
     pause = !pause;
+    if (pause) {
+      
+      pauseResume.innerText = "Resume";
+    } else{
+      pauseResume.innerText = "Pause";
+      
+    }
 }
 
 function resetCounter() {
   clearInterval(intervalId);
   intervalId = null;
+  // if we start then pause then reset and then again start
+  // then it will not start as pause will be true
+  // so we need to set pause to false so that start can happen
+  pause = false;
   x = 0;
   counterElement.innerText = x;
 }
