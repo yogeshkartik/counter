@@ -3,7 +3,7 @@ let x = 1;
 
 const counterElement = document.getElementById("counter");
 const lapCounterElement = document.querySelector(".lap");
-const intervalId = null;
+let intervalId = null;
 
 const startCount = document.getElementById("start-count");
 const pauseResume = document.getElementById("pause-resume");
