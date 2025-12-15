@@ -11,7 +11,7 @@ const resetCount = document.getElementById("reset-count");
 const lapCount = document.getElementById("lap-count");
 
 startCount.addEventListener("click", startCounter);
-// pauseResume.addEventListener("click", pauseResume);
+pauseResume.addEventListener("click", pauseResumer);
 resetCount.addEventListener("click", resetCounter);
 lapCount.addEventListener("click", lapCounter);
 
@@ -20,20 +20,14 @@ function startCounter() {
   // else if we click on start button twice or more it will increase counter
 
   intervalId= setInterval(() => {
-    
+    if(!pause){
     counterElement.innerText = x;
-    x++;
+    x++;}
   }, 1000);
 }
 
-function pauseCount() {
-  if (pause) {
-    pause = false;
-    counter();
-  } else {
-    pause = true;
-    counter();
-  }
+function pauseResumer() {
+    pause = !pause;
 }
 
 function resetCounter() {
