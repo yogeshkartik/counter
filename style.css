@@ -77,9 +77,79 @@ h6 {
 body {
   margin: 0;
   height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center;  */
+  /* align-items: center;  */
+}
+
+
+/* ============== Custom ==============  */
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.lap{
+  display: flex;
+  overflow-y: auto;
+  height: 100vh;
+  flex-direction: column-reverse;
+  gap: 10px;
+  background-color: cadetblue;
+}
+
+.container-main{
   display: flex;
   flex-direction: column;
-  justify-content: center; /* horizontal center */
-  align-items: center; /* vertical center */
-  font-family: "Open Sans", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  color: #222;
+}
+
+.counter-circle{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: #222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom:1rem;
+  margin-top: 2rem;
+}
+
+.button-group{
+  display: flex;
+  gap: 10px;
+  
+
+}
+
+.button{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  /* font-weight: bold; */
 }

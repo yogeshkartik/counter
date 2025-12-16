@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Counter</h1>
-    <div class="counter">
-        <p id="counter"></p>
-    </div>
-    
-    <button id="start-count">Start</button>
-    <button id="pause-resume">Pause</button>
-    <button id="reset-count">Reset</button>
-    <button id="lap-count">Lap</button>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="lap"></div>
+      <div class="container-main">
+        <div class="title">
+          <h1>Counter</h1>
+        </div>
+        <div class="counter-circle">
+          <p id="counter"></p>
+        </div>
 
-    <div class="lap">
+        <div class="button-group">
+          <button class="button" id="start-count">Start</button>
+          <button class="button" id="pause-resume">Pause</button>
+          <button class="button" id="reset-count">Reset</button>
+          <button class="button" id="lap-count">Lap</button>
+        </div>
+      </div>
     </div>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
