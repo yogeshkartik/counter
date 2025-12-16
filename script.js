@@ -1,8 +1,9 @@
 let pause = false;
 let x = 1;
+let lapCountNo = 1;
 
 const counterElement = document.getElementById("counter");
-const lapCounterElement = document.querySelector(".lap");
+const lapContainer = document.querySelector(".lap");
 let intervalId = null;
 
 const startCount = document.getElementById("start-count");
@@ -44,7 +45,16 @@ function resetCounter() {
 }
 
 function lapCounter() {
-  const p = document.createElement("p");
+  const lapItems = document.createElement("div");
+  lapItems.classList.add("lap-items");
+  const lapNO = document.createElement("span");
+  lapNO.classList.add("lap-no");
+  lapNO.textContent = lapCountNo;
+  lapCountNo++;
+  const p = document.createElement("span");
+  p.classList.add("lap-time");
   p.textContent = x;
-  lapCounterElement.appendChild(p);
+  lapItems.appendChild(lapNO);
+  lapItems.appendChild(p);
+  lapContainer.appendChild(lapItems);
 }

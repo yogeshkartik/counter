@@ -103,7 +103,24 @@ body {
   height: 100vh;
   flex-direction: column-reverse;
   gap: 10px;
-  background-color: cadetblue;
+  
+  /* flex-direction: column-reverse2222224c; */
+  /* gap: 10px; */
+  
+}
+
+.lap-items{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  /* flex-direction: column-reverse; */
+  background-color: #2222224c;
+
+}
+
+.lap-no{
+  align-items: flex-start;
+  /* text-align: left; */
 }
 
 .container-main{
