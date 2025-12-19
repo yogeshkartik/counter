@@ -85,56 +85,57 @@ body {
   /* align-items: center;  */
 }
 
-
 /* ============== Custom ==============  */
 
-.container{
+.container {
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 80%;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
 }
 
-.lap{
+.lap {
   display: flex;
   overflow-y: auto;
   height: 100vh;
   flex-direction: column-reverse;
   gap: 10px;
-  
+
   /* flex-direction: column-reverse2222224c; */
   /* gap: 10px; */
-  
 }
 
-.lap-items{
+.lap-items {
   display: flex;
   gap: 20px;
   justify-content: center;
   /* flex-direction: column-reverse; */
   background-color: #2222224c;
-
 }
 
-.lap-no{
+.lap-no {
   align-items: flex-start;
   /* text-align: left; */
 }
 
-.container-main{
+.container-main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.title{
+.title {
   color: #222;
 }
 
-.counter-circle{
+.counter-circle {
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -146,18 +147,16 @@ body {
   color: white;
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
 }
 
-.button-group{
+.button-group {
   display: flex;
   gap: 10px;
-  
-
 }
 
-.button{
+.button {
   border-radius: 50%;
   width: 50px;
   height: 50px;
