@@ -153,7 +153,7 @@ body {
 
 .container-main {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -170,12 +170,15 @@ body {
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  background-color: #222;
+  background-color:var(--color-surface);
+  color:var(--color-accent);
+  border-radius: var(--border-radius-round);
+  box-shadow: var(--shadow-accent);
+  
 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -189,15 +192,19 @@ body {
 }
 
 .button {
-  border-radius: 50%;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius-round);
+  transition: var(--transition-fast);
+
   width: 50px;
   height: 50px;
-  background-color: #222;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  
   font-size: 0.7rem;
   /* font-weight: bold; */
 }
