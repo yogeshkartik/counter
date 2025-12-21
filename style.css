@@ -51,6 +51,9 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
 }
 
 /* 6. Improve media defaults */
@@ -166,7 +169,9 @@ body {
   color: #222;
 }
 
-.counter-circle {
+/* .counter-circle {
+  position: relative;
+  overflow: hidden;
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -183,7 +188,29 @@ body {
   font-weight: bold;
   margin-bottom: 1rem;
   margin-top: 2rem;
+} */
+
+.counter-circle {
+  position: relative;          /* REQUIRED */
+  overflow: hidden;            /* CLIP liquid inside circle */
+  
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+
+  box-shadow: var(--shadow-accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3rem;
+  font-weight: bold;
 }
+
 
 
 .button-group {
@@ -207,4 +234,44 @@ body {
   
   font-size: 0.7rem;
   /* font-weight: bold; */
+}
+
+
+/* ============== Liquid =========== */
+
+.liquid::before,
+.liquid::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: 50%;
+  top: 70%;                    /* liquid level */
+  transform: translate(-50%, -50%);
+  background: #000;
+}
+
+.liquid::before {
+  border-radius: 45%;
+  background: rgba(0, 229, 255, 0.35);
+  animation: liquidMove 5s linear infinite;
+}
+
+.liquid::after {
+  border-radius: 40%;
+  background: rgba(0, 229, 255, 0.2);
+  animation: liquidMove 9s linear infinite reverse;
+}
+@keyframes liquidMove {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.counter-value {
+  position: relative;
+  z-index: 2;                  /* ABOVE liquid */
 }

@@ -1,0 +1,177 @@
+:root {
+  /* ========= Colors ========= */
+  --bg: #121212;
+  --surface: #222222;
+  --text: #ffffff;
+  --text-muted: #b0b0b0;
+
+  --accent: #00e5ff;
+  --accent-soft: rgba(0, 229, 255, 0.15);
+
+  --success: #00ff88;
+  --warning: #ffb300;
+  --danger: #ff5252;
+
+  /* ========= Shape ========= */
+  --radius-round: 50%;
+  --radius-md: 12px;
+  --border-color: rgba(255, 255, 255, 0.12);
+
+  /* ========= Effects ========= */
+  --shadow-accent: 0 0 20px rgba(0, 229, 255, 0.35);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  /* ========= Motion ========= */
+  --fast: 0.2s ease;
+  --normal: 0.3s ease;
+}
+
+/* ========= Reset ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ========= Layout ========= */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.container-main {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========= Lap Panel ========= */
+.lap {
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+.lap-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(34, 34, 34, 0.3);
+}
+
+/* ========= Counter ========= */
+.counter-circle {
+  position: relative;
+  overflow: hidden;
+
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--shadow-accent);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.counter-value {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========= Liquid ========= */
+.liquid::before,
+.liquid::after {
+  content: "";
+  position: absolute;
+  inset: auto -50% -120%;
+  width: 200%;
+  height: 200%;
+  transform-origin: center;
+}
+
+.liquid::before {
+  background: rgba(0, 229, 255, 0.35);
+  border-radius: 45%;
+  animation: liquid-spin 6s linear infinite;
+}
+
+.liquid::after {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 40%;
+  animation: liquid-spin 10s linear infinite reverse;
+}
+
+@keyframes liquid-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========= Buttons ========= */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 0.7rem;
+  transition: var(--fast);
+
+  display: grid;
+  place-items: center;
+}
+
+.button:hover {
+  background: var(--accent-soft);
+}
