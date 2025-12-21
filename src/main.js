@@ -1,3 +1,6 @@
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true });
 let pause = false;
 let x = 1;
 let lapCountNo = 1;
@@ -58,3 +61,5 @@ function lapCounter() {
   lapItems.appendChild(p);
   lapContainer.appendChild(lapItems);
 }
+
+
