@@ -61,5 +61,3 @@ function lapCounter() {
   lapItems.appendChild(p);
   lapContainer.appendChild(lapItems);
 }
-
-
